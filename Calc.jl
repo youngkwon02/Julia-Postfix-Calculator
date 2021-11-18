@@ -6,7 +6,7 @@ function enter(num)
 end
 
 function clear()
-  STACK = []
+  global STACK = []
   println()
 end
 
