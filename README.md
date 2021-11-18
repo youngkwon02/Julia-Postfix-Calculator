@@ -1,4 +1,4 @@
-# ☂️ Julia-PostfixCalc
+# ☂️ Julia Postfix Calculator
 <p>
 Postfix calculator implemented by Julia programming language.<br>
 (Also called stack calculator) 
@@ -10,9 +10,9 @@ Postfix calculator implemented by Julia programming language.<br>
 
 |    Type    |  Operation                                        |  Example                             |
 | :-----------: | :---------------------------------: | :-------------------------------------------------: |
-|    Basic ( Int64, Float64 )   |  add, sub, mul, div  | 10, 20, 3,14159, 2,71828, ... | 
-|    Rational  | add, sub, mul, div   | 1/2, 3/5, 2/7, ... |
-|    Complex   | add, sub, mul, div   | 1.5 + 2i, 2 - 5i, 0.25 + 0.6i, ... |
+|    [Basic ( Int64, Float64 )](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/Calc.jl)   |  add, sub, mul, div  | 10, 20, 3,14159, 2,71828, ... | 
+|    [Rational](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/Rational.jl)  | add, sub, mul, div   | 1/2, 3/5, 2/7, ... |
+|    [Complex](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/Complex.jl)   | add, sub, mul, div   | 1.5 + 2i, 2 - 5i, 0.25 + 0.6i, ... |
 
 ---
 
@@ -35,8 +35,11 @@ add()
 
 # 💻 Test
 
-## Case 1
+### - CalcTest1.jl &nbsp;&nbsp; [(Here)](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/CalcTest.jl)
+<img src = "https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/docs/screenshot/case1.png?raw=true" width=400>
 
-## Case 2
+### - CalcTest2.jl &nbsp;&nbsp; [(Here)](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/CalcTest2.jl)
+<img src = "https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/docs/screenshot/case2.png?raw=true" width=400>
 
-## Case 3
+### - CalcTest3.jl &nbsp;&nbsp; [(Here)](https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/CalcTest3.jl)
+<img src = "https://github.com/youngkwon02/Julia-PostfixCalc/blob/main/docs/screenshot/case3.png?raw=true" width=400>
