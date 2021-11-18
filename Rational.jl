@@ -17,8 +17,10 @@ end
 
 function RationalWithOneSlash(strRational::String)
   splitResult = split(strRational, "//")
-  if splitResult[1] == splitResult[2]
-    return string(1)
+  upper = parse(Int64, splitResult[1])
+  lower = parse(Int64, splitResult[2])
+  if upper % lower == 0
+    return string(upper / lower)
   end
   return splitResult[1] * "/" * splitResult[2]
 end
