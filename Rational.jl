@@ -2,7 +2,7 @@ struct Rational
   value::String
 end
 
-function RationalParse(RationalElem)
+function RationalParse(RationalElem::Rational)
   strNum = RationalElem.value
   arr = split(strNum, "/")
   if size(arr, 1) == 1
@@ -15,7 +15,7 @@ function RationalParse(RationalElem)
   return upper // lower
 end
 
-function RationalWithOneSlash(strRational)
+function RationalWithOneSlash(strRational::String)
   splitResult = split(strRational, "//")
   if splitResult[1] == splitResult[2]
     return string(1)
