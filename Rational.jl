@@ -47,6 +47,22 @@ function AddOper(val1::Rational, val2::Integer)
   return [Rational, result]
 end
 
+function AddOper(val1::Float, val2::Rational)
+  R_Value1 = rationalize(parse(Float64, val1.value))
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value1 + R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function AddOper(val1::Rational, val2::Float)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = rationalize(parse(Float64, val2.value))
+  strResult = string(R_Value1 + R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
 function SubOper(val1::Rational, val2::Rational)
   R_Value1 = RationalParse(val1)
   R_Value2 = RationalParse(val2)
@@ -66,6 +82,22 @@ end
 function SubOper(val1::Rational, val2::Integer)
   R_Value1 = RationalParse(val1)
   R_Value2 = parse(Int64, val2.value) // 1
+  strResult = string(R_Value2 - R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function SubOper(val1::Float, val2::Rational)
+  R_Value1 = rationalize(parse(Float64, val1.value))
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value2 - R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function SubOper(val1::Rational, val2::Float)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = rationalize(parse(Float64, val2.value))
   strResult = string(R_Value2 - R_Value1)
   result = RationalWithOneSlash(strResult)
   return [Rational, result]
