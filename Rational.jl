@@ -104,3 +104,83 @@ function SubOper(val1::Rational, val2::Float)
   result = RationalWithOneSlash(strResult)
   return [Rational, result]
 end
+
+function MulOper(val1::Rational, val2::Rational)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value1 * R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function MulOper(val1::Integer, val2::Rational)
+  R_Value1 = parse(Int64, val1.value) // 1
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value1 * R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function MulOper(val1::Rational, val2::Integer)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = parse(Int64, val2.value) // 1
+  strResult = string(R_Value1 * R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function MulOper(val1::Float, val2::Rational)
+  R_Value1 = rationalize(parse(Float64, val1.value))
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value1 * R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function MulOper(val1::Rational, val2::Float)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = rationalize(parse(Float64, val2.value))
+  strResult = string(R_Value1 * R_Value2)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function DivOper(val1::Rational, val2::Rational)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value2 / R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function DivOper(val1::Integer, val2::Rational)
+  R_Value1 = parse(Int64, val1.value) // 1
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value2 / R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function DivOper(val1::Rational, val2::Integer)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = parse(Int64, val2.value) // 1
+  strResult = string(R_Value2 / R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function DivOper(val1::Float, val2::Rational)
+  R_Value1 = rationalize(parse(Float64, val1.value))
+  R_Value2 = RationalParse(val2)
+  strResult = string(R_Value2 / R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
+
+function DivOper(val1::Rational, val2::Float)
+  R_Value1 = RationalParse(val1)
+  R_Value2 = rationalize(parse(Float64, val2.value))
+  strResult = string(R_Value2 / R_Value1)
+  result = RationalWithOneSlash(strResult)
+  return [Rational, result]
+end
