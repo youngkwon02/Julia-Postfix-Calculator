@@ -20,6 +20,17 @@ struct Float
   value::String
 end
 
+function RemoveUselessZero(strFloat::String)
+  while true
+    if strFloat[end] == '0' || strFloat[end] == '.'
+      strFloat = strFloat[1:end-1]
+    else
+      break
+    end
+  end
+  return strFloat
+end
+
 function add()
   val1 = pop!(STACK)
   val2 = pop!(STACK)
