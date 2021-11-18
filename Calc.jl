@@ -40,8 +40,8 @@ function add()
 end
 
 function AddOper(val1::Integer, val2::Integer)
-  result = floor(parse(Float64, val1.value) + parse(Float64, val2.value), digits = 10)
-  return [Float, string(result)]
+  result = parse(Int64, val1.value) + parse(Int64, val2.value)
+  return [Integer, string(result)]
 end
 
 function AddOper(val1::Integer, val2::Float)
@@ -68,8 +68,8 @@ function sub()
 end
 
 function SubOper(val1::Integer, val2::Integer)
-  result = floor(parse(Float64, val2.value) - parse(Float64, val1.value), digits = 10)
-  return [Float, string(result)]
+  result = parse(Int64, val2.value) - parse(Int64, val1.value)
+  return [Integer, string(result)]
 end
 
 function SubOper(val1::Integer, val2::Float)
