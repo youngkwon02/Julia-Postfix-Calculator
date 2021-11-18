@@ -6,7 +6,7 @@ function RationalParse(RationalElem::Rational)
   strNum = RationalElem.value
   arr = split(strNum, "/")
   if size(arr, 1) == 1
-    upper = 1
+    upper = arr[1]
     lower = 1
   else
     upper = parse(Int, arr[1])
@@ -15,7 +15,19 @@ function RationalParse(RationalElem::Rational)
   return upper // lower
 end
 
+function FractionParse(strNum::String)
+  arr = split(strNum, "/")
+  if size(arr, 1) == 1
+    return string(parse(Float64, string(arr[1])))
+  end
+  return string(parse(Int64, string(arr[1])) / parse(Int64, string(arr[2])))
+end
+
 function RationalWithOneSlash(strRational::String)
+  if occursin(".", strRational)
+    num = parse(Float64, strRational)
+    strRational = string(Base.Rational(num))
+  end
   splitResult = split(strRational, "//")
   upper = parse(Int64, splitResult[1])
   lower = parse(Int64, splitResult[2])
