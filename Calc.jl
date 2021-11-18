@@ -29,12 +29,20 @@ function add()
   println(typeAndResult[2])
 end
 
-function AddOper(val1, val2)
-  type1 = typeof(val1)
-  type2 = typeof(val2)
-  if type1 in [Integer, Float] && type2 in [Integer, Float]
-    return [Float, parse(Float64, val1.value) + parse(Float64, val2.value)]
-  end
+function AddOper(val1::Integer, val2::Integer)
+  return [Float, parse(Float64, val1.value) + parse(Float64, val2.value)]
+end
+
+function AddOper(val1::Integer, val2::Float)
+  return [Float, parse(Float64, val1.value) + parse(Float64, val2.value)]
+end
+
+function AddOper(val1::Float, val2::Integer)
+  return [Float, parse(Float64, val1.value) + parse(Float64, val2.value)]
+end
+
+function AddOper(val1::Float, val2::Float)
+  return [Float, parse(Float64, val1.value) + parse(Float64, val2.value)]
 end
 
 function sub()
@@ -46,10 +54,18 @@ function sub()
   println(typeAndResult[2])
 end
 
-function SubOper(val1, val2)
-  type1 = typeof(val1)
-  type2 = typeof(val2)
-  if type1 in [Integer, Int, Int64, Float, Float64] && type2 in [Integer, Int, Int64, Float, Float64]
-    return [Float, parse(Float64, val2.value) - parse(Float64, val1.value)]
-  end
+function SubOper(val1::Integer, val2::Integer)
+  return [Float, parse(Float64, val2.value) - parse(Float64, val1.value)]
+end
+
+function SubOper(val1::Integer, val2::Float)
+  return [Float, parse(Float64, val2.value) - parse(Float64, val1.value)]
+end
+
+function SubOper(val1::Float, val2::Integer)
+  return [Float, parse(Float64, val2.value) - parse(Float64, val1.value)]
+end
+
+function SubOper(val1::Float, val2::Float)
+  return [Float, parse(Float64, val2.value) - parse(Float64, val1.value)]
 end
