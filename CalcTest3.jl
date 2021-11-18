@@ -5,9 +5,9 @@ include("Rational.jl")
 include("Complex.jl")
 
 enter(Complex("3 + 2i"))
-enter(Complex("2 -2i"))
+enter(Complex("2 - 2i"))
 sub()
-enter(Complex("2 -4i"))
+enter(Complex("2 - 4i"))
 add()
 
 clear()
