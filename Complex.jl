@@ -30,3 +30,15 @@ function AddOper(val1::Complex, val2::Complex)
   strResult = string(real(parse(Base.Complex{Int64}, strResult)))
   return [Float, strResult]
 end
+
+function SubOper(val1::Complex, val2::Complex)
+  C_Value1 = ComplexParse(val1)
+  C_Value2 = ComplexParse(val2)
+  strResult = string(C_Value2 - C_Value1)
+  if HavingImaginePart(strResult)
+    result = ImToI(strResult)
+    return [Complex, result]
+  end
+  strResult = string(real(parse(Base.Complex{Int64}, strResult)))
+  return [Float, strResult]
+end
